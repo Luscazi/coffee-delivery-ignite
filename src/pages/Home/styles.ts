@@ -1,20 +1,33 @@
 import styled from "styled-components";
 
+import BackgroundHome from './../../../public/Background-home.png'
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 9.4rem;
 `
 
+export const BackgroundHeader = styled.div`
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url(${BackgroundHome});
+  width: 100%;
+  height: 54.4rem;
+`
+
 export const Header = styled.div`
-  margin-top: 9.4rem;
+  margin: 9.4rem 0 3.2rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 7.7rem;
+  z-index: 1;
 `
 
 export const Information = styled.div`
+
   display: flex;
   flex-direction: column;
   gap: 6.6rem;
@@ -79,6 +92,8 @@ export const Main = styled.div`
   justify-content: center;
   flex-direction: column;
   gap: 3.4rem;
+  margin-bottom: 15.7rem;
+
 `
 
 export const Products = styled.div`

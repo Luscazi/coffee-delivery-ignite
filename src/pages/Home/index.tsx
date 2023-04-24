@@ -8,6 +8,7 @@ import {
   CardBox,
   Main,
   Products,
+  BackgroundHeader,
 } from './styles'
 
 import CartWhite from './../../../public/icons/cart-white.svg'
@@ -21,6 +22,7 @@ import Cooffee from './../../../public/products/Image.png'
 export function Home() {
   return (
     <Container>
+      <BackgroundHeader />
       <Header>
         <Information>
           <div className='text'>
