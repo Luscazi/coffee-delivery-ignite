@@ -27,4 +27,17 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     font-size: 1rem;
   }
+
+  ::-webkit-scrollbar{
+      width: 8px;
+      background-color: #dbac2c;
+      border: 5px solid white;
+      border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb{
+      background-color: #dbac2c;
+      border-radius: 999px;
+      border: 1px solid white;
+  }
 `

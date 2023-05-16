@@ -1,13 +1,16 @@
+import { ButtonHTMLAttributes, ReactNode } from 'react';
 import { ButtonContainer } from "./styles";
 
-type ButtonProps = {
-  children: React.ReactNode
-  text: string
-}
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  text: string;
+  children: ReactNode;
+};
 
-export function Button({children, text}: ButtonProps) {
+export function Button({children, text, ...restProps}: ButtonProps) {
   return(
-    <ButtonContainer>
+    <ButtonContainer
+      {...restProps}
+    >
       {children}
       {text}
     </ButtonContainer>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import BackgroundHome from './../../../public/Background-home.png'
+import BackgroundHome from './../../assets/Background-home.png'
 
 export const Container = styled.div`
   display: flex;
@@ -91,7 +91,7 @@ export const Main = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: 3.4rem;
+  gap: 5.4rem;
   margin-bottom: 15.7rem;
 
 `
@@ -100,5 +100,5 @@ export const Products = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 3.2rem;
+  gap: 5.2rem 3.2rem;
 `

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ButtonContainer = styled.div`
+export const ButtonContainer = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,6 +8,7 @@ export const ButtonContainer = styled.div`
   height: 3.2rem;
   background-color: ${props => props.theme['base-button']};
   padding: 0.8rem;
+  border: none;
   border-radius: 0.6rem;
 
   font-family: 'Roboto';

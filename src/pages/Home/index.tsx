@@ -11,17 +11,20 @@ import {
   BackgroundHeader,
 } from './styles'
 
-import CartWhite from './../../../public/icons/cart-white.svg'
-import TimerWhite from './../../../public/icons/timer-white.svg'
-import BoxWhite from './../../../public/icons/box-white.svg'
-import CoffeetWhite from './../../../public/icons/coffee-white.svg'
-import BannerHome from './../../../public/banner-home.png'
+import CartWhite from './../../assets/icons/cart-white.svg'
+import TimerWhite from './../../assets/icons/timer-white.svg'
+import BoxWhite from './../../assets/icons/box-white.svg'
+import CoffeetWhite from './../../assets/icons/coffee-white.svg'
+import BannerHome from './../../assets/banner-home.png'
 import { Catalog } from './components/Catalog'
-import Cooffee from './../../../public/products/Image.png'
+import { useContext } from 'react'
+import { CoffeeContext } from '../../context/CoffeeContext'
 
 export function Home() {
+  const { CoffeProductList } = useContext(CoffeeContext)
+
   return (
-    <Container>
+    <Container className='container'>
       <BackgroundHeader />
       <Header>
         <Information>
@@ -67,76 +70,16 @@ export function Home() {
       <Main>
         <h1>Nossos cafés</h1>
         <Products>
-          <Catalog 
-            image={Cooffee}
-            title='Expresso Tradicional'
-            type={['Tradicional','Caseiro']}
-          />
-          <Catalog 
-            image={Cooffee}
-            title='Expresso Tradicional'
-            type={['Tradicional','Caseiro']}
-          />
-          <Catalog 
-            image={Cooffee}
-            title='Expresso Tradicional'
-            type={['Tradicional','Caseiro']}
-          />
-          <Catalog 
-            image={Cooffee}
-            title='Expresso Tradicional'
-            type={['Tradicional','Caseiro']}
-          />
-          <Catalog 
-            image={Cooffee}
-            title='Expresso Tradicional'
-            type={['Tradicional','Caseiro']}
-          />
-          <Catalog 
-            image={Cooffee}
-            title='Expresso Tradicional'
-            type={['Tradicional','Caseiro']}
-          />
-          <Catalog 
-            image={Cooffee}
-            title='Expresso Tradicional'
-            type={['Tradicional','Caseiro']}
-          />
-          <Catalog 
-            image={Cooffee}
-            title='Expresso Tradicional'
-            type={['Tradicional','Caseiro']}
-          />
-          <Catalog 
-            image={Cooffee}
-            title='Expresso Tradicional'
-            type={['Tradicional','Caseiro']}
-          />
-          <Catalog 
-            image={Cooffee}
-            title='Expresso Tradicional'
-            type={['Tradicional','Caseiro']}
-          />
-          <Catalog 
-            image={Cooffee}
-            title='Expresso Tradicional'
-            type={['Tradicional','Caseiro']}
-          />
-          <Catalog 
-            image={Cooffee}
-            title='Expresso Tradicional'
-            type={['Tradicional','Caseiro']}
-          />
-          <Catalog 
-            image={Cooffee}
-            title='Expresso Tradicional'
-            type={['Tradicional','Caseiro']}
-          />
-          <Catalog 
-            image={Cooffee}
-            title='Expresso Tradicional'
-            type={['Tradicional','Caseiro']}
-          />
+          {CoffeProductList?.map(product => (
+            <Catalog
+              key={product.id}
+              id={product.id}
+              image={product.image}
+              name={product.name}
+              type={product.type}
+              price={product.price}
+            />
+          ))}
         </Products>
       </Main>
     </Container>

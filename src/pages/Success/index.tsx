@@ -6,14 +6,33 @@ import {
   ImageAside,
 } from './styles'
 
-import SuccessImage from './../../../public/success.svg'
-import LocationIcon from './../../../public/icons/location-ball.svg'
-import TimerIcon from './../../../public/icons/timer-ball.svg'
-import CashIcon from './../../../public/icons/cash-ball.svg'
+import SuccessImage from './../../assets/success.svg'
+import LocationIcon from './../../assets/icons/location-ball.svg'
+import TimerIcon from './../../assets/icons/timer-ball.svg'
+import CashIcon from './../../assets/icons/cash-ball.svg'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { OrderData } from '../Checkout'
+import { paymentMethods } from '../Checkout/components/PaymentMethod'
+import { useEffect } from 'react'
+
+interface LocationType {
+  state: OrderData
+}
 
 export function Success() {
+  const { state } = useLocation() as unknown as LocationType
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!state) {
+      navigate('/')
+    }
+  },[])
+
+  if (!state) return<></>
+
   return (
-    <SuccessContainer>
+    <SuccessContainer className='container'>
       <Main>
         <Title>
           <h1>Uhu! Pedido confirmado</h1>
@@ -23,22 +42,23 @@ export function Success() {
           <div className='Info'>
             <img src={LocationIcon} alt="" />
             <div className='text'>
-              <span>Entrega em Rua <strong>João Daniel Martinelli</strong>, 102</span>
-              <span>Farrapos - Porto Alegre, RS</span>
+              <span>Entrega em Rua <strong>{state.street}</strong>, {state.number}</span>
+              <span>{state.district} - {state.city}, {state.uf}</span>
             </div>
           </div>
           <div className='Info'>
-            <img src={CashIcon} alt="" />
+            <img src={TimerIcon} alt="" />
             <div className='text'>
               <span>Previsão de entrega</span>
               <span><strong>20 min - 30 min </strong></span>
             </div>
           </div>
           <div className='Info'>
-            <img src={TimerIcon} alt="" />
+            <img src={CashIcon} alt="" />
+
             <div className='text'>
               <span>Pagamento na entrega</span>
-              <span><strong>Cartão de Crédito</strong></span>
+              <span><strong>{paymentMethods[state.paymentMethod].label}</strong></span>
             </div>
           </div>
         </Content>

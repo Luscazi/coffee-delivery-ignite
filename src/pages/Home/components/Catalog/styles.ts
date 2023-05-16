@@ -2,16 +2,22 @@ import styled from "styled-components";
 
 export const CatalogContainer = styled.div`
   width: 25.6rem;
-  height: 31rem;
+  height: 28rem;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1.2rem;
+  padding: 0 2rem;
 
   background-color: ${props => props.theme['base-card']};
   border-radius: 0.6rem 3.6rem;
+`
+
+export const CoverProduct = styled.img`
+  width: 12rem;
+  margin-top: -5rem;
 `
 
 export const TypesBox = styled.div`
@@ -35,6 +41,7 @@ export const Types = styled.div`
     font-weight: 700;
     font-size: 1rem;
     line-height: 130%;
+    text-transform: uppercase;
   }
 `
 

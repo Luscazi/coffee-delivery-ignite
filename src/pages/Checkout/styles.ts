@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CheckoutContainer = styled.div`
+export const CheckoutContainer = styled.form`
   margin-top: 4rem;
   display: flex;
   justify-content: space-between;
@@ -27,7 +27,7 @@ export const CheckoutForm = styled.div`
   padding: 4rem;
   background-color: ${props => props.theme['base-card']};
   width: 64rem;
-  height: 37.2rem;
+  min-height: 37.2rem;
   border-radius: 0.6rem;
 `
 
@@ -58,7 +58,7 @@ export const CheckoutPayment = styled.div`
   padding: 4rem;
   background-color: ${props => props.theme['base-card']};
   width: 64rem;
-  height: 20.7rem;
+  min-height: 20.7rem;
   border-radius: 0.6rem;
 
   display: flex;
@@ -72,7 +72,7 @@ export const Aside = styled.div`
   gap: 1.5rem;
 
   hr {
-    border-color: ${props => props.theme['base-button']};
+    border: 1px solid ${props => props.theme['base-button']};
   }
 `
 
@@ -80,12 +80,24 @@ export const CartAside = styled.div`
   padding: 4rem;
   background-color: ${props => props.theme['base-card']};
   width: 44.8rem;
-  height: 49.8rem;
+  max-height: 59.4rem;
   border-radius: 0.6rem 4.4rem;
 
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+`
+
+export const ProductCartList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  overflow-y: auto;
+  padding: 0 1.5rem 0 0;
+
+  > div > hr {
+    margin-top: 2.4rem;
+  }
 `
 
 export const ButtonConfirm = styled.button`
@@ -95,7 +107,8 @@ export const ButtonConfirm = styled.button`
   justify-content: center;
   background-color: ${props => props.theme['yellow']};
   color: ${props => props.theme['white']};
-
+  
+  text-transform: uppercase;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
