@@ -2,7 +2,7 @@
 
 <img src="https://user-images.githubusercontent.com/71772559/178171983-f724d1a7-deb4-4d13-aa92-09e1cac4ec36.png" align="center" />
 
-Durante este desafio, exploramos conceitos mais avançados para criar uma aplicação de entrega de café do zero! A aplicação consiste em 3 telas, sendo a primeira uma tela de apresentação que lista os cafés disponíveis. Na segunda tela, o usuário precisa preencher um formulário com seus dados de endereço, e do lado direito é possível visualizar os itens do carrinho, com a opção de alterar a quantidade ou removê-los. Na terceira e última tela, é exibida uma confirmação do pedido juntamente com os detalhes da entrega.
+Neste desafio, desenvolvi um site totalmente funcional. No entanto, em busca de aprimorar meus conhecimentos, após concluir o desafio com o conhecimento que possuía, consultei o vídeo do [GBDEV](https://www.youtube.com/watch?v=TagcTdubxjg&t=11606s) Esse vídeo me permitiu refatorar todo o meu código e descobrir outras maneiras de realizar o que eu já tinha feito.
 
 ### 🛠️ Nesse projeto foi utilizado
 
